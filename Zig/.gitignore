@@ -1,0 +1,7 @@
+.zigmod
+deps.zig
+build.zig
+zig-template
+zigmod.lock
+zig-out
+zig-cache
