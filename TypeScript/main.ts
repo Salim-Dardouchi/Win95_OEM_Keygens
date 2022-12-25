@@ -1,14 +1,17 @@
-function main() {
+document.getElementById("genkey").onclick = function() {
     let key = document.getElementById("key");
     key.innerHTML = generate_win95_key();
-}
+};
 
-function to_clipboard() {
+document.getElementById("copy2clip").onclick = function() {
     let key_text: string = document.getElementById("key")?.innerHTML;
     if (key_text != null) {
         navigator.clipboard.writeText(key_text);
     }
-}
+
+    $("#succtoast").toast('show');
+};
+
 
 function generate_win95_key(): string {
     /* We have to do all this dumb shit to get strings from the integers we had with padded zeros... */

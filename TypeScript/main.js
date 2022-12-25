@@ -1,16 +1,15 @@
-/* This file was transpiled from TypeScript using tsc */
-
-function main() {
+document.getElementById("genkey").onclick = function () {
     var key = document.getElementById("key");
     key.innerHTML = generate_win95_key();
-}
-function to_clipboard() {
+};
+document.getElementById("copy2clip").onclick = function () {
     var _a;
     var key_text = (_a = document.getElementById("key")) === null || _a === void 0 ? void 0 : _a.innerHTML;
     if (key_text != null) {
         navigator.clipboard.writeText(key_text);
     }
-}
+    $("#succtoast").toast('show');
+};
 function generate_win95_key() {
     /* We have to do all this dumb shit to get strings from the integers we had with padded zeros... */
     var day = Math.floor((Math.random() * 366)).toString().padStart(3, '0');
